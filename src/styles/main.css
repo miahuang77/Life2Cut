@@ -1,0 +1,101 @@
+/* Camera */
+.camera {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.camera-frame {
+  position: relative;
+  width: 100%;
+  padding-bottom: 125%;
+  overflow: hidden;
+}
+
+.camera-first-photo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+}
+
+.camera-video {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+  display: block;
+  transform: scaleX(-1);
+}
+
+.camera-video--top {
+  top: 0;
+}
+
+.camera-video--bottom {
+  top: 50%;
+}
+
+.countdown {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4rem;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+.countdown--top {
+  top: 25%;
+}
+
+.countdown--bottom {
+  top: 75%;
+}
+
+.camera-snap-btn {
+  position: relative;
+  z-index: 1;
+  margin-top: 10px;
+}
+
+/* Photo Preview */
+.preview-sticker-bar {
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.preview-container {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.preview-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.preview-sticker {
+  position: absolute;
+  font-size: 40px;
+  cursor: grab;
+  user-select: none;
+}
+
+.preview-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 8px;
+}

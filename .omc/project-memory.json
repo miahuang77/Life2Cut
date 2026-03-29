@@ -1,0 +1,178 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1774741675889,
+  "projectRoot": "/Users/huangmingyi/photobooth-app",
+  "techStack": {
+    "languages": [
+      {
+        "name": "JavaScript/TypeScript",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "package.json"
+        ]
+      }
+    ],
+    "frameworks": [
+      {
+        "name": "react",
+        "version": "19.2.4",
+        "category": "frontend"
+      },
+      {
+        "name": "react-dom",
+        "version": "19.2.4",
+        "category": "frontend"
+      },
+      {
+        "name": "vite",
+        "version": "8.0.1",
+        "category": "build"
+      }
+    ],
+    "packageManager": "npm",
+    "runtime": null
+  },
+  "build": {
+    "buildCommand": "npm run build",
+    "testCommand": null,
+    "lintCommand": "npm run lint",
+    "devCommand": "npm run dev",
+    "scripts": {
+      "dev": "vite",
+      "build": "vite build",
+      "lint": "eslint .",
+      "preview": "vite preview"
+    }
+  },
+  "conventions": {
+    "namingStyle": null,
+    "importStyle": null,
+    "testPattern": null,
+    "fileOrganization": "type-based"
+  },
+  "structure": {
+    "isMonorepo": false,
+    "workspaces": [],
+    "mainDirectories": [
+      "public",
+      "src"
+    ],
+    "gitBranches": null
+  },
+  "customNotes": [],
+  "directoryMap": {
+    "public": {
+      "path": "public",
+      "purpose": "Public files",
+      "fileCount": 2,
+      "lastAccessed": 1774741675857,
+      "keyFiles": [
+        "favicon.svg",
+        "icons.svg"
+      ]
+    },
+    "src": {
+      "path": "src",
+      "purpose": "Source code",
+      "fileCount": 2,
+      "lastAccessed": 1774741675858,
+      "keyFiles": [
+        "App.jsx",
+        "main.jsx"
+      ]
+    },
+    "src/assets": {
+      "path": "src/assets",
+      "purpose": "Static assets",
+      "fileCount": 3,
+      "lastAccessed": 1774741675867,
+      "keyFiles": [
+        "hero.png",
+        "react.svg",
+        "vite.svg"
+      ]
+    },
+    "src/components": {
+      "path": "src/components",
+      "purpose": "UI components",
+      "fileCount": 3,
+      "lastAccessed": 1774741675867,
+      "keyFiles": [
+        "Camera.jsx",
+        "CaptureButton.jsx",
+        "PhotoPreview.jsx"
+      ]
+    },
+    "src/pages": {
+      "path": "src/pages",
+      "purpose": "Page components",
+      "fileCount": 2,
+      "lastAccessed": 1774741675868,
+      "keyFiles": [
+        "Home.jsx",
+        "Landing.jsx"
+      ]
+    },
+    "src/utils": {
+      "path": "src/utils",
+      "purpose": "Utility functions",
+      "fileCount": 1,
+      "lastAccessed": 1774741675868,
+      "keyFiles": [
+        "capturePhoto.jsx"
+      ]
+    }
+  },
+  "hotPaths": [
+    {
+      "path": "src/components/Camera.jsx",
+      "accessCount": 34,
+      "lastAccessed": 1774753599711,
+      "type": "file"
+    },
+    {
+      "path": "src/components/PhotoPreview.jsx",
+      "accessCount": 10,
+      "lastAccessed": 1774753613887,
+      "type": "file"
+    },
+    {
+      "path": "src/pages/Home.jsx",
+      "accessCount": 3,
+      "lastAccessed": 1774751215316,
+      "type": "file"
+    },
+    {
+      "path": "",
+      "accessCount": 3,
+      "lastAccessed": 1774753565716,
+      "type": "directory"
+    },
+    {
+      "path": "src/App.jsx",
+      "accessCount": 3,
+      "lastAccessed": 1774753632240,
+      "type": "file"
+    },
+    {
+      "path": "src/styles/main.css",
+      "accessCount": 2,
+      "lastAccessed": 1774753584813,
+      "type": "file"
+    },
+    {
+      "path": "src/hooks/useCamera.jsx",
+      "accessCount": 1,
+      "lastAccessed": 1774741701809,
+      "type": "file"
+    },
+    {
+      "path": "package.json",
+      "accessCount": 1,
+      "lastAccessed": 1774743224113,
+      "type": "file"
+    }
+  ],
+  "userDirectives": []
+}
