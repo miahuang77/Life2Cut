@@ -17,4 +17,5 @@ If you are developing a production application, we recommend using TypeScript wi
 # Life2Cut
 How to run:
 npm install
+
 npm run dev
