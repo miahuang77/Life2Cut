@@ -1,8 +1,15 @@
 import React from 'react'
 import {useRef, useEffect, useState} from "react";
-const FRAME_WIDTH = 1176;
-const FRAME_HEIGHT = 1470;
-const HALF = FRAME_HEIGHT / 2;
+import frameSrc from '../assets/frame.png';
+const FRAME_WIDTH = 1548;
+const FRAME_HEIGHT = 1938;
+
+// Photo slot positions within the frame (where the transparent windows are)
+const SLOT_X = 250;
+const SLOT_W = 1056;
+const SLOT_H = 613;
+const SLOT_Y_TOP = 163;
+const SLOT_Y_BOTTOM = 850;
 
 const Camera = ({ setPhoto }) => {
   const videoRef = useRef(null);
@@ -55,12 +62,12 @@ const startCountdown = () => {
 
     let ctx = canvas.getContext('2d');
 
-    const yOffset = stage === 0 ? 0 : HALF;
+    const slotY = stage === 0 ? SLOT_Y_TOP : SLOT_Y_BOTTOM;
 
     const width = video.videoWidth;
     const height = video.videoHeight;
 
-    const targetAspect = FRAME_WIDTH / HALF;
+    const targetAspect = SLOT_W / SLOT_H;
     const videoAspect = width / height;
 
     let sx, sy, sw, sh;
@@ -80,22 +87,27 @@ const startCountdown = () => {
   ctx.save();
   ctx.translate(FRAME_WIDTH, 0);
   ctx.scale(-1, 1);
-  ctx.drawImage(video, sx, sy, sw, sh, 0, yOffset, FRAME_WIDTH, HALF);
+  ctx.drawImage(video, sx, sy, sw, sh, FRAME_WIDTH - SLOT_X - SLOT_W, slotY, SLOT_W, SLOT_H);
   ctx.restore();
 
   if (stage === 0) {
-    // Extract the top half as a preview image
+    // Extract the top slot as a preview image
     const tempCanvas = document.createElement('canvas');
-    tempCanvas.width = FRAME_WIDTH;
-    tempCanvas.height = HALF;
+    tempCanvas.width = SLOT_W;
+    tempCanvas.height = SLOT_H;
     const tempCtx = tempCanvas.getContext('2d');
-    tempCtx.drawImage(canvas, 0, 0, FRAME_WIDTH, HALF, 0, 0, FRAME_WIDTH, HALF);
+    tempCtx.drawImage(canvas, SLOT_X, SLOT_Y_TOP, SLOT_W, SLOT_H, 0, 0, SLOT_W, SLOT_H);
     setFirstPhoto(tempCanvas.toDataURL('image/png'));
     photostageRef.current = 1;
     setPhotostage(1);
   } else if (stage === 1) {
-    const imageDataUrl = canvas.toDataURL('image/png');
-    setPhoto(imageDataUrl);
+    const frame = new Image();
+    frame.src = frameSrc;
+    frame.onload = () => {
+      ctx.drawImage(frame, 0, 0, FRAME_WIDTH, FRAME_HEIGHT);
+      const imageDataUrl = canvas.toDataURL('image/png');
+      setPhoto(imageDataUrl);
+    };
   }
 }
 
@@ -113,6 +125,7 @@ const startCountdown = () => {
         {countdown && (
           <div className={`countdown ${photostage === 0 ? 'countdown--top' : 'countdown--bottom'}`}>{countdown}</div>
         )}
+        <img src={frameSrc} alt="" className="camera-frame-overlay" />
       </div>
       <canvas ref={canvasRef} style={{ display: 'none' }}></canvas>
       <button onClick={startCountdown} className="camera-snap-btn">SNAP!</button>

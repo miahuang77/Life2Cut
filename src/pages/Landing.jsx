@@ -1,10 +1,11 @@
 import React from 'react'
+import logo from '../assets/logo.png'
 
 const Landing = ({ onEnter }) => {
   return (
     <div>
-      <h1>Welcome to photo booth</h1>
-      <button onClick={onEnter}>Enter</button>
+      <img src={logo} className='logo'/>
+      <button className='enter-button' onClick={onEnter}>Enter</button>
     </div>
   );
 }

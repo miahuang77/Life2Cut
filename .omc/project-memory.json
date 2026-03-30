@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "lastScanned": 1774741675889,
+  "lastScanned": 1774846448272,
   "projectRoot": "/Users/huangmingyi/photobooth-app",
   "techStack": {
     "languages": [
@@ -66,7 +66,7 @@
       "path": "public",
       "purpose": "Public files",
       "fileCount": 2,
-      "lastAccessed": 1774741675857,
+      "lastAccessed": 1774846448239,
       "keyFiles": [
         "favicon.svg",
         "icons.svg"
@@ -76,7 +76,7 @@
       "path": "src",
       "purpose": "Source code",
       "fileCount": 2,
-      "lastAccessed": 1774741675858,
+      "lastAccessed": 1774846448239,
       "keyFiles": [
         "App.jsx",
         "main.jsx"
@@ -85,19 +85,18 @@
     "src/assets": {
       "path": "src/assets",
       "purpose": "Static assets",
-      "fileCount": 3,
-      "lastAccessed": 1774741675867,
+      "fileCount": 2,
+      "lastAccessed": 1774846448246,
       "keyFiles": [
-        "hero.png",
-        "react.svg",
-        "vite.svg"
+        "frame.png",
+        "logo.png"
       ]
     },
     "src/components": {
       "path": "src/components",
       "purpose": "UI components",
       "fileCount": 3,
-      "lastAccessed": 1774741675867,
+      "lastAccessed": 1774846448246,
       "keyFiles": [
         "Camera.jsx",
         "CaptureButton.jsx",
@@ -108,7 +107,7 @@
       "path": "src/pages",
       "purpose": "Page components",
       "fileCount": 2,
-      "lastAccessed": 1774741675868,
+      "lastAccessed": 1774846448246,
       "keyFiles": [
         "Home.jsx",
         "Landing.jsx"
@@ -118,7 +117,7 @@
       "path": "src/utils",
       "purpose": "Utility functions",
       "fileCount": 1,
-      "lastAccessed": 1774741675868,
+      "lastAccessed": 1774846448246,
       "keyFiles": [
         "capturePhoto.jsx"
       ]
@@ -127,50 +126,50 @@
   "hotPaths": [
     {
       "path": "src/components/Camera.jsx",
-      "accessCount": 34,
-      "lastAccessed": 1774753599711,
+      "accessCount": 26,
+      "lastAccessed": 1774849317591,
       "type": "file"
     },
     {
       "path": "src/components/PhotoPreview.jsx",
-      "accessCount": 10,
-      "lastAccessed": 1774753613887,
-      "type": "file"
-    },
-    {
-      "path": "src/pages/Home.jsx",
-      "accessCount": 3,
-      "lastAccessed": 1774751215316,
-      "type": "file"
-    },
-    {
-      "path": "",
-      "accessCount": 3,
-      "lastAccessed": 1774753565716,
-      "type": "directory"
-    },
-    {
-      "path": "src/App.jsx",
-      "accessCount": 3,
-      "lastAccessed": 1774753632240,
+      "accessCount": 25,
+      "lastAccessed": 1774851552270,
       "type": "file"
     },
     {
       "path": "src/styles/main.css",
-      "accessCount": 2,
-      "lastAccessed": 1774753584813,
+      "accessCount": 20,
+      "lastAccessed": 1774850375480,
+      "type": "file"
+    },
+    {
+      "path": "src",
+      "accessCount": 1,
+      "lastAccessed": 1774846494199,
+      "type": "directory"
+    },
+    {
+      "path": "src/pages/Home.jsx",
+      "accessCount": 1,
+      "lastAccessed": 1774846497650,
+      "type": "file"
+    },
+    {
+      "path": "src/utils/capturePhoto.jsx",
+      "accessCount": 1,
+      "lastAccessed": 1774846498177,
       "type": "file"
     },
     {
       "path": "src/hooks/useCamera.jsx",
       "accessCount": 1,
-      "lastAccessed": 1774741701809,
+      "lastAccessed": 1774846498719,
       "type": "file"
     },
     {
-      "path": "package.json",
+      "path": "src/assets/frame.png",
       "accessCount": 1,
-      "lastAccessed": 1774743224113,
+      "lastAccessed": 1774848144569,
       "type": "file"
     }
   ],

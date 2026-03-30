@@ -1,43 +1,93 @@
+/* Landing */
+.landing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: transparent;
+}
+.logo {
+  width: 300px;
+  margin-bottom: 2rem;
+  display: block;
+  margin: 0 auto;
+  padding-bottom: 50px;
+}
+.enter-button {
+  display: block;
+  margin: 0 auto;
+  color: white;
+  font-family: Castoro, serif;
+  font-size: 2rem;
+  font-weight: 350;
+  border: 1px solid balck;
+  border-radius: 10px;
+  background-color: black;
+  text-align: center;
+  transition: background-color 0.2s ease;
+}
+
+.enter-button:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
 /* Camera */
+.home-logo {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  width: 250px;
+}
 .camera {
   position: relative;
   width: 100%;
   max-width: 500px;
-  margin: 0 auto;
+  margin: 80px auto 0;
 }
 
 .camera-frame {
   position: relative;
   width: 100%;
-  padding-bottom: 125%;
+  padding-bottom: 125.19%;
   overflow: hidden;
 }
 
-.camera-first-photo {
+.camera-frame-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 50%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.camera-first-photo {
+  position: absolute;
+  top: 8.41%;
+  left: 16.15%;
+  width: 68.22%;
+  height: 31.63%;
   object-fit: cover;
 }
 
 .camera-video {
   position: absolute;
-  left: 0;
-  width: 100%;
-  height: 50%;
+  left: 16.15%;
+  width: 68.22%;
+  height: 31.63%;
   object-fit: cover;
   display: block;
   transform: scaleX(-1);
 }
 
 .camera-video--top {
-  top: 0;
+  top: 8.41%;
 }
 
 .camera-video--bottom {
-  top: 50%;
+  top: 43.86%;
 }
 
 .countdown {
@@ -51,20 +101,70 @@
 }
 
 .countdown--top {
-  top: 25%;
+  top: 24.2%;
 }
 
 .countdown--bottom {
-  top: 75%;
+  top: 59.7%;
 }
 
 .camera-snap-btn {
   position: relative;
   z-index: 1;
   margin-top: 10px;
+  color: white;
+  font-family: Castoro, serif;
+  font-size: 2rem;
+  font-weight: 350;
+  border: 1px solid balck;
+  border-radius: 10px;
+  background-color: black;
+  text-align: center;
+  transition: background-color 0.2s ease;
+}
+
+.camera-snap-btn:hover {
+  transform: scale(1.05);
+  cursor: pointer;
 }
 
 /* Photo Preview */
+.download-button {
+display: block;
+  color: white;
+  font-family: Castoro, serif;
+  font-size: 2rem;
+  font-weight: 350;
+  border: 1px solid balck;
+  border-radius: 10px;
+  background-color: black;
+  text-align: center;
+  transition: background-color 0.2s ease;
+}
+
+.download-button:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.retake-button {
+display: block;
+  color: white;
+  font-family: Castoro, serif;
+  font-size: 2rem;
+  font-weight: 350;
+  border: 1px solid balck;
+  border-radius: 10px;
+  background-color: black;
+  text-align: center;
+  transition: background-color 0.2s ease;
+}
+
+.retake-button:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
 .preview-sticker-bar {
   display: flex;
   gap: 4px;
