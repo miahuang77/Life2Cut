@@ -1,5 +1,5 @@
 # Life2Cut
-This is a photo booth simulator with cute cat frames and stickers.
+https://life2-cut.vercel.app/
 
 How to run:
 
