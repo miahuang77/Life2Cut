@@ -47,44 +47,57 @@ const PhotoPreview = ({ photo, setPhoto }) => {
   };
 
   const handleDownload = () => {
-    const container = containerRef.current;
-    const canvas = document.createElement('canvas');
-    const rect = container.getBoundingClientRect();
-    canvas.width = rect.width;
-    canvas.height = rect.height;
+  const container = containerRef.current;
+  const canvas = document.createElement('canvas');
+  const rect = container.getBoundingClientRect();
+
+  const img = new Image();
+  img.onload = () => {
+    const naturalW = img.naturalWidth;   // 1548
+    const naturalH = img.naturalHeight; // 1938
+    canvas.width = naturalW;
+    canvas.height = naturalH;
     const ctx = canvas.getContext('2d');
 
-    const img = new Image();
-    img.onload = () => {
-      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+    ctx.drawImage(img, 0, 0, naturalW, naturalH);
 
-      let loaded = 0;
-      if (stickers.length === 0) {
-        const link = document.createElement('a');
-        link.download = 'photobooth.png';
-        link.href = canvas.toDataURL('image/png');
-        link.click();
-        return;
-      }
-      stickers.forEach(s => {
-        const sImg = new Image();
-        sImg.onload = () => {
-          const scale = s.size / sImg.naturalWidth;
-          ctx.drawImage(sImg, s.x, s.y, s.size, sImg.naturalHeight * scale);
-          loaded++;
-          if (loaded === stickers.length) {
-            const link = document.createElement('a');
-            link.download = 'photobooth.png';
-            link.href = canvas.toDataURL('image/png');
-            link.click();
-          }
-        };
-        sImg.src = s.src;
-      });
-    };
-    img.src = photo;
+    const scaleX = naturalW / rect.width;
+    const scaleY = naturalH / rect.height;
+
+    let loaded = 0;
+    if (stickers.length === 0) {
+      const link = document.createElement('a');
+      link.download = 'photobooth.png';
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+      return;
+    }
+
+    stickers.forEach(s => {
+      const sImg = new Image();
+      sImg.onload = () => {
+        const scaledSize = s.size * scaleX;
+        const scale = scaledSize / sImg.naturalWidth;
+        ctx.drawImage(
+          sImg,
+          s.x * scaleX,
+          s.y * scaleY,
+          scaledSize,
+          sImg.naturalHeight * scale
+        );
+        loaded++;
+        if (loaded === stickers.length) {
+          const link = document.createElement('a');
+          link.download = 'photobooth.png';
+          link.href = canvas.toDataURL('image/png');
+          link.click();
+        }
+      };
+      sImg.src = s.src;
+    });
   };
-
+  img.src = photo;
+};
   const removeSticker = (id) => {
     setStickers(stickers.filter(s => s.id !== id));
   };
